@@ -6,12 +6,13 @@ import { FaBehanceSquare } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className='bg-slate-900 text-white flex justify-around px-2'>
+    <div className='bg-gradient-to-r from-green-500 to-green-600 text-white flex justify-between px-2'>
       <div className='py-5 text-xl font-serif font-bold'>
         <Link to="/">Pixaro</Link>
       </div>
@@ -30,12 +31,17 @@ function Navbar() {
         <GiHamburgerMenu className='text-3xl' onClick={() => setToggle(!toggle)} />
       </div>
       { toggle ? 
-            <div className='absolute w-screen h-screen bg-slate-900 py-7 flex flex-col items-center'>
-              <ImCross className='text-3xl' onClick={() => setToggle(!toggle)} />
-              <Link to="/" className='px-3 py-7 text-3xl' onClick={() => setToggle(!toggle)}>Home</Link>
-              <Link to="/about" className='px-3 py-7 text-3xl' onClick={() => setToggle(!toggle)}>About</Link>
-              <Link to="/support" className='px-3 py-7 text-3xl' onClick={() => setToggle(!toggle)}>Support</Link>
-            </div>
+            <motion.div 
+              className='absolute w-full h-screen bg-gradient-to-r from-green-500 to-green-600 py-7 flex flex-col items-center'
+              animate={{ opacity: 1}}
+              initial={{ opacity: 0}}
+              transition={{ duration: 0.5}}
+              >
+              <ImCross className='text-xl' onClick={() => setToggle(!toggle)} />
+              <Link to="/" className='px-3 py-7 text-xl' onClick={() => setToggle(!toggle)}>Home</Link>
+              <Link to="/about" className='px-3 py-7 text-xl' onClick={() => setToggle(!toggle)}>About</Link>
+              <Link to="/support" className='px-3 py-7 text-xl' onClick={() => setToggle(!toggle)}>Support</Link>
+            </motion.div>
                 : 
             <></>
         }

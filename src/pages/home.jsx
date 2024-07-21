@@ -22,9 +22,14 @@ export default function Home() {
     <div>
       <ImageSearch searchText={(text) => setTerms(text)} />
           {!isLoading && images.length === 0 && <h1 className="text-4xl font-bold text-center my-28 text-slate-600 mb-64">No images found</h1>}
-          {isLoading ? <h1 className="text-4xl font-bold text-center my-28 text-slate-600">Loading...</h1> : <div className="pl-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {isLoading ? 
+          <h1 className="text-4xl font-bold text-center my-28 text-slate-600">Loading...</h1> 
+          : 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {images.map((image) => (
-          <ImageCard key={image.id} image={image} />
+            <div className='flex justify-center'>
+              <ImageCard key={image.id} image={image} />
+            </div>
           ))}
           </div>}
     </div>
