@@ -8,7 +8,7 @@ const ImageCard = ({image}) => {
         <motion.div
             animate={{ y: 70, opacity: 0}}
             whileInView={{ y: 0, opacity: 1}}
-            transition={{ duration: 2}}
+            transition={{ duration: 1}}
             viewport={{ once: true }}
         >
             <div className="max-w-sm my-3 h-fit rounded-lg shadow-lg overflow-hidden">

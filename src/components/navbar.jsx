@@ -12,9 +12,10 @@ function Navbar() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className='bg-gradient-to-r from-green-500 to-green-600 text-white flex justify-between px-2'>
-      <div className='py-5 text-xl font-serif font-bold'>
-        <Link to="/">Pixaro</Link>
+    <div className='bg-gradient-to-r from-green-700 to-green-600 text-white flex justify-between px-2'>
+      <div className='flex flex-row justify-center py-5 text-xl font-serif font-bold'>
+        <img src="/logo.png" alt="Logo" className='w-8 h-8 self-center rounded-full' />
+        <Link to="/" className='px-3'>Pixaro</Link>
       </div>
       <div className='hidden md:flex text-lg justify-between py-5'>
         <Link to="/" className='px-3'>Home</Link>
