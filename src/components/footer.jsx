@@ -67,7 +67,7 @@ function Footer() {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-green-900 hover:bg-green-400 text-white px-4 py-2 rounded-r-md transition-colors"
+                className="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-r-md transition-colors"
               >
                 Subscribe
               </motion.button>

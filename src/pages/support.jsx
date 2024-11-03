@@ -87,9 +87,9 @@ function Support() {
             At Pixaro, we're committed to providing you with the best possible support. Our team is here to assist you with any questions, concerns, or issues you may have. We strive to ensure your experience with our platform is smooth and enjoyable.
           </motion.p>
           <div className="grid md:grid-cols-2 gap-8">
-            <ContactInfo icon={FaEnvelope} title="Email" content="linkhanthtel@icloud.com" />
-            <ContactInfo icon={FaPhone} title="Phone" content="+65 8762 5331" />
-            <ContactInfo icon={FaMapMarkerAlt} title="Address" content="Blk 3, Joo Chiat Road, Singapore 123456" />
+            <ContactInfo icon={FaEnvelope} title="Email" content="contact@pixaro.com" />
+            <ContactInfo icon={FaPhone} title="Phone" content="+65 1234 5678" />
+            <ContactInfo icon={FaMapMarkerAlt} title="Address" content="Blk 1, Avenue Road, Singapore 123456" />
             <ContactInfo icon={FaClock} title="Business Hours" content="Mon-Fri: 9AM-6PM SGT" />
           </div>
         </div>

@@ -117,101 +117,103 @@ const ImageSearch = ({ searchText, randomSearch, searchHistory, setSearchHistory
   }
 
   return (
-    <motion.div 
-      className='w-full max-w-4xl mx-auto px-4 py-8 md:py-16'
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
+    <div className="w-full h-[50vh] flex items-center justify-center bg-[url('./images/cover.png')] bg-cover bg-center bg-no-repeat">
       <motion.div 
-        ref={searchRef}
-        className='relative'
-        style={{ perspective: 2000 }}
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        className="w-full max-w-4xl mx-auto px-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
-        <motion.div
-          style={{ x, y, rotateX, rotateY, z: 100 }}
-          drag
-          dragElastic={0.16}
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          whileTap={{ cursor: "grabbing" }}
+        <motion.div 
+          ref={searchRef}
+          className='relative'
+          style={{ perspective: 2000 }}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
         >
-          <form onSubmit={onSubmit} className="w-full">
-            <motion.div 
-              className={`bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-full shadow-xl transition-all duration-300 ${isExpanded ? 'p-6' : 'p-2'}`}
-              whileHover={{ boxShadow: "0px 0px 20px rgba(0, 255, 0, 0.3)" }}
-            >
-              <div className="flex items-center">
-                <input 
-                  type="text"
-                  value={text}
-                  onChange={(e) => setText(e.target.value)}
-                  onFocus={() => setIsExpanded(true)}
-                  className={`bg-transparent border-none w-full text-white mr-3 py-2 px-2 leading-tight focus:outline-none placeholder-white text-lg ${isExpanded ? 'flex-grow' : 'w-40 sm:w-60'}`}
-                  placeholder="Search images..."
-                />
-                <div className={`flex items-center space-x-2 ${isExpanded ? 'flex-shrink-0' : ''}`}>
-                  <motion.button 
-                    type="submit"
-                    className="bg-green-400 hover:bg-green-600 text-white p-2 rounded-full flex items-center justify-center"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaSearch />
-                  </motion.button>
-                  <motion.button 
-                    type="button"
-                    onClick={randomSearch}
-                    className="bg-blue-400 hover:bg-blue-600 text-white p-2 rounded-full flex items-center justify-center"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaRandom />
-                  </motion.button>
-                  <motion.button 
-                    type="button"
-                    onClick={() => setShowHistory(!showHistory)}
-                    className="bg-purple-400 hover:bg-purple-600 text-white p-2 rounded-full flex items-center justify-center"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaHistory />
-                  </motion.button>
+          <motion.div
+            style={{ x, y, rotateX, rotateY, z: 100 }}
+            drag
+            dragElastic={0.16}
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            whileTap={{ cursor: "grabbing" }}
+          >
+            <form onSubmit={onSubmit} className="w-full">
+              <motion.div 
+                className={`bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-full shadow-xl transition-all duration-300 ${isExpanded ? 'p-6' : 'p-4'}`}
+                whileHover={{ boxShadow: "0px 0px 20px rgba(255, 255, 255, 0.3)" }}
+              >
+                <div className="flex items-center">
+                  <input 
+                    type="text"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    onFocus={() => setIsExpanded(true)}
+                    className={`bg-transparent border-none w-full text-white mr-3 py-2 px-4 leading-tight focus:outline-none placeholder-white text-lg ${isExpanded ? 'flex-grow' : 'w-40 sm:w-60'}`}
+                    placeholder="Search images..."
+                  />
+                  <div className={`flex items-center space-x-2 ${isExpanded ? 'flex-shrink-0' : ''}`}>
+                    <motion.button 
+                      type="submit"
+                      className="bg-green-400 hover:bg-green-600 text-white p-3 rounded-full flex items-center justify-center"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaSearch />
+                    </motion.button>
+                    <motion.button 
+                      type="button"
+                      onClick={randomSearch}
+                      className="bg-blue-400 hover:bg-blue-600 text-white p-3 rounded-full flex items-center justify-center"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaRandom />
+                    </motion.button>
+                    <motion.button 
+                      type="button"
+                      onClick={() => setShowHistory(!showHistory)}
+                      className="bg-purple-400 hover:bg-purple-600 text-white p-3 rounded-full flex items-center justify-center"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaHistory />
+                    </motion.button>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          </form>
+              </motion.div>
+            </form>
+          </motion.div>
+          <AnimatePresence>
+            {showHistory && searchHistory.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute mt-2 w-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg z-10"
+              >
+                <ul className="py-2">
+                  {searchHistory.map((term, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="px-4 py-2 hover:bg-white hover:bg-opacity-20 cursor-pointer text-white"
+                      onClick={() => handleHistoryClick(term)}
+                    >
+                      {term}
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
-        <AnimatePresence>
-          {showHistory && searchHistory.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute mt-2 w-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg z-10"
-            >
-              <ul className="py-2">
-                {searchHistory.map((term, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    className="px-4 py-2 hover:bg-white hover:bg-opacity-20 cursor-pointer text-white"
-                    onClick={() => handleHistoryClick(term)}
-                  >
-                    {term}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.div>
-    </motion.div>
+    </div>
   )
 }
 

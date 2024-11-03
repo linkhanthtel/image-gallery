@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const socialIcons = [
-  { Icon: FaFacebook, href: "https://facebook.com" },
-  { Icon: AiFillInstagram, href: "https://instagram.com" },
-  { Icon: FaPinterest, href: "https://pinterest.com" },
-  { Icon: FaBehanceSquare, href: "https://behance.net" },
+  { Icon: FaFacebook, href: "#" },
+  { Icon: AiFillInstagram, href: "#" },
+  { Icon: FaPinterest, href: "#" },
+  { Icon: FaBehanceSquare, href: "#" },
 ]
 
 const navItems = [
