@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="/placeholder.svg?height=150&width=150" alt="Pixaro Logo" width="150"/>
+  <img src="public/logo.png" alt="Pixaro Logo" width="150"/>
 
   # Pixaro Image Gallery App
 
