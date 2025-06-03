@@ -18,15 +18,15 @@
 
 Pixaro Image Gallery is a sleek and intuitive application that allows users to explore a vast collection of high-quality images. Powered by the Pixabay API, our app provides a seamless experience for finding the perfect visuals for any project or inspiration.
 
-### ✨ Features
+### Features
 
-- 🔍 Powerful search functionality
-- 🏷️ Image tagging with hashtags
-- 📊 Display of image metadata (photographer, downloads, likes, views)
-- 📱 Responsive design for all devices
-- 💾 Download images directly from the gallery
+- Powerful search functionality
+- Image tagging with hashtags
+- Display of image metadata (photographer, downloads, likes, views)
+- Responsive design for all devices
+- Download images directly from the gallery
 
-## 🚀 Getting Started
+## Getting Started
 
 To get a local copy up and running, follow these simple steps.
 
