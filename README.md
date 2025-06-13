@@ -10,8 +10,6 @@
 
   Discover stunning images with ease using our user-friendly image gallery app!
 
-  [View Demo](https://image-gallery-silk.vercel.app/) • [Report Bug](https://github.com/linkhanthtel/image-gallery) • [Request Feature](https://github.com/linkhanthtel/image-gallery)
-
 </div>
 
 ## 📷 About The Project
@@ -32,6 +30,7 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
+- React.js (v17.0.0 or later)
 - Node.js (v14.0.0 or later)
 - npm
   ```sh
