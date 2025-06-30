@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import { FaFacebook, FaPinterest, FaBehanceSquare, FaTimes } from "react-icons/fa"
+import { FaFacebook, FaTimes } from "react-icons/fa"
 import { AiFillInstagram } from "react-icons/ai"
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 
@@ -184,10 +184,8 @@ const HamburgerIcon = ({ isOpen, onClick }) => (
 )
 
 const socialIcons = [
-  { Icon: FaFacebook, href: "#", label: "Facebook" },
-  { Icon: AiFillInstagram, href: "#", label: "Instagram" },
-  { Icon: FaPinterest, href: "#", label: "Pinterest" },
-  { Icon: FaBehanceSquare, href: "#", label: "Behance" },
+  { Icon: FaFacebook, href: "https://www.facebook.com/lin.htel", label: "Facebook" },
+  { Icon: AiFillInstagram, href: "https://www.instagram.com/lk7nv/?next=%2F", label: "Instagram" },
 ]
 
 const navItems = [
