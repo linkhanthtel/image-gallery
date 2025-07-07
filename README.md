@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="public/logo.png" alt="Pixaro Logo" width="150"/>
 
   # Pixaro Image Gallery App
 
